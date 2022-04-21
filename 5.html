@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+
+<body>
+  <!--
+Обязательное задание.
+
+Необходимо скопировать и вставить в данный скрипт все функции из 4 задания.
+Необходимо реализовать функцию:
+mathOperation(arg1, arg2, operation);
+Параметры:
+arg1 - первое число.
+arg2 - второе число.
+operation - строка, которая содержит один символ из: "+", "-", "*", "/".
+Функция mathOperation должна вернуть результат операции, который был передан в
+параметр operation для двух первых аргументов (arg1 и arg2).
+Функция mathOperation должна использовать для вычисления функции из 4 задания.
+
+Примеры вызова функции:
+console.log(mathOperation(5, 3, "+")); // 8
+console.log(mathOperation(5, 3, ":)")); // NaN
+
+Функции mathOperation всегда передаются корректные числа, проверки на NaN,
+Infinity делать не нужно, однако, в случае если был передан некорректный
+аргумент в параметр operation, необходимо вернуть NaN.
+
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
+-->
+  <script>
+    "use strict";
+
+    /**
+       * Функция выполняет арифметические операции ("+", "-", "*", "/")
+       * @param arg1 {number} - первое число
+       * @param arg2 {number} - второе число
+       * @param operation {string} - выполняемая арифметическая операция
+       * @returns {number} - возвращает результат операции
+       */
+    function mathOperation(arg1, arg2, operation) {
+      if (operation === '+') {
+        return summation(arg1, arg2);
+      } else if (operation === '-') {
+        return substraction(arg1, arg2);
+      } else if (operation === '*') {
+        return multiplication(arg1, arg2);
+      } else if (operation === '/') {
+        return division(arg1, arg2);
+      } else {
+        return NaN;
+      }
+    }
+
+    console.log(mathOperation(6, 8, '*'));
+
+    /**
+     * Функция складывает два значения
+     * @param a {number} - первое слагаемое
+     * @param b {number} - второе слагаемое
+     * @returns {number} - возвращает результат сложения - сумму
+     */
+    function summation(a, b) {
+      return a + b;
+    }
+
+    console.log(summation(33, 22));
+
+    /**
+     * Функция вычитает большее значение из меньшего
+     * @param a {number} - первое число - уменьшаемое
+     * @param b {number} - второе число - вычитаемое
+     * @returns {number} - возвращает результат вычитания - разность
+     */
+    function substraction(a, b) {
+      if (a > b) {
+        return a - b;
+      } else {
+        return b - a;
+      }
+    }
+
+    console.log(substraction(23, 26));
+
+    /**
+     * Функция перемножает два значения
+     * @param a {number} - первый множитель
+     * @param b {number} - второй множитель
+     * @returns {number} - возвращает результат умножения - произведение
+     */
+    function multiplication(a, b) {
+      return a * b;
+    }
+
+    console.log(multiplication(12, 12));
+
+    /**
+     * Функция делит одно значение на другое
+     * @param a {number} - первое число - делимое
+     * @param b {number} - второе число - делитель
+     * @returns {number} - возвращает результат деления - частное
+     */
+    function division(a, b) {
+      return a / b;
+    }
+
+    console.log(division(350, 20));
+  </script>
+</body>
+
+</html>
